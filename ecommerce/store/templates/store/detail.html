@@ -1,0 +1,36 @@
+{% extends 'store/main.html' %}
+
+{% block content %}
+<div class="container">
+            <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img height="400px" width="360px" src="{{ product_objects.imageURL }}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">Name:
+                        {{ product_objects.name }}
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-md-12">Price:
+                        {{ product_objects.price }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">Digital:
+                        {{ product_objects.digital }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+</div>
+
+{% endblock content %}
