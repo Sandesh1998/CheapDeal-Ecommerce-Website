@@ -1,0 +1,41 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="card card-sm">
+                    <div class="card-body row no-gytters align-items-center">
+                        <div class="col">
+                            <input type="search" name="item_name" placeholder="Search for products" class="form-control form-control-borderless">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{product.imageURL}}">
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<button data-product="{{product.id}}" data-action="add" class="btn  btn-warning add-btn update-cart">Add to Cart</button>
+
+				<a href="/{{ product.id }}" class="btn btn btn-warning">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends 'store/main.html' %}
+
+{% block content %}
+ <div class="container">
+     <div class="row">
+         <div class="col-md-4 offset-md-4"  >
+             <div class="card">
+                 <div class="card-header text-white bg-info" >
+                     <div class="card-title">
+                         Login
+                     </div>
+                 </div>
+                 <div class="card-body">
+                   <form method="POST">
+                      {% csrf_token %}
+                      {% for field in form %}
+                        <div class="form-group">
+                            {{ field.name }}
+                            {{ field }}
+                        </div>
+                      {% endfor %}
+                      <button class="btn-info" type="submit">Login</button>
+                   </form>
+                 </div>
+                 				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+					</div>
+
+				</div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
